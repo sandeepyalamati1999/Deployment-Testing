@@ -14,6 +14,9 @@ A production-ready starter project built with **React 19**, **TypeScript**, **Vi
 | React Router v7 | Client-side routing |
 | Axios | HTTP client |
 | ESLint + Prettier | Linting & formatting |
+| Express 4 | REST API server |
+| JSON Web Tokens | Auth tokens |
+| bcryptjs | Password hashing |
 
 ---
 
@@ -52,14 +55,27 @@ cp .env.example .env
 ### Running the App
 
 ```bash
-# Start development server (http://localhost:5173)
-npm run dev
+# Start both frontend (5173) and backend (3001) together
+npm run dev:all
+
+# Or start them separately
+npm run dev           # Frontend only → http://localhost:5173
+npm run dev:server    # Backend only  → http://localhost:3001
 
 # Build for production
 npm run build
 
 # Preview production build
 npm run preview
+```
+
+### Server setup
+
+```bash
+cd server
+cp .env .env.local   # customise JWT_SECRET before production use
+npm install
+npm run dev
 ```
 
 ### Linting & Formatting
