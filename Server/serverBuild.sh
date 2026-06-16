@@ -24,7 +24,7 @@ case "${1:-}" in
         ;;
 esac
 
-cd "$PROJECT_ROOT/server"
+cd "$PROJECT_ROOT/Server"
 npm run build
 
 tar -czf "$ARCHIVE" \
