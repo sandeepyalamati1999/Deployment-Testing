@@ -7,7 +7,7 @@ const router = Router();
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 
-router.get('/health', (_req, res) => {
+router.get('/health', (_req: any, res: { json: (arg0: { status: string; timestamp: string; }) => void; }) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
